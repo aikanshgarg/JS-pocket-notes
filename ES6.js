@@ -136,6 +136,8 @@ for(let [key, value] of  map.entries()) {} // 'for-of' loop syntax
 
 - then/catch are two methods used on promise objects, to consume our promise
 
-
+- async/await: feature introduced in ES8/2017 to consume promises
+	* async function always runs in the background!
+	* async function always returns a promise!
 
 *****************************************************************************************************************************************************************************************************/

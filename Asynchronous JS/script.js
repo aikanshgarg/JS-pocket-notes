@@ -55,7 +55,8 @@
 // - then/catch are two methods for consuming promises
 // - HOW IT DEALS WITH CALLBACK HELL: 'CHAINING'
 
-const getIDS = new Promise((resolve, reject) => {
+// ---------------------------PRODUCING PROMISES
+const getIDs = new Promise((resolve, reject) => {
 	setTimeout(() => {
 		resolve([523, 887, 432, 984]); // calling this fn when promise is fulfilled. 
 	}, 1500);
@@ -81,21 +82,44 @@ const getRelated = publisher => {
 	});
 }
 
-
+// ---------------------------CONSUMING PROMISES
 // argument passed into the callback fn of 'then' method is the result which we want when our promise to be resolved
-getIDS
-.then(IDs => { // callback fn is passed(event handler)
-	console.log(IDs); // data from line 60
-	return getRecipe(IDs[2]); // passed to line 65 recID arg
-})
-.then(recipe => { // chaining
-	console.log(recipe); // data from line 69
-	return getRelated(`Aikansh`); // passed to line 75 publisher arg
-})
-.then(recipe => {
-	console.log(recipe); // data from line 79
-})  
-// argument passed into the callback fn of 'error' method is the result which we want when our promise to be rejected
-.catch(error => {
-	console.log('Error!!');
+// getIDs
+// .then(IDs => { // callback fn is passed(event handler)
+// 	console.log(IDs); // data from line 60
+// 	return getRecipe(IDs[2]); // passed to line 65 recID arg
+// })
+// .then(recipe => { // chaining
+// 	console.log(recipe); // data from line 69
+// 	return getRelated(`Aikansh`); // passed to line 75 publisher arg
+// })
+// .then(recipe => {
+// 	console.log(recipe); // data from line 79
+// })  
+// // argument passed into the callback fn of 'error' method is the result which we want when our promise to be rejected
+// .catch(error => {
+// 	console.log('Error!!');
+// });
+
+
+
+// ----------------------CONSUMING PROMISES WITH ASYNC/AWAIT
+
+//  * async function always runs in the background!
+//	* async function always returns a promise!
+//  * await stops the execution of code(inside async fn) until that promise is resolved
+
+
+async function getRecipesAW() {
+	const IDs = await getIDs; // we assign the result of getIDs promise to variable IDs
+	console.log(IDs);
+	const recipe = await getRecipe(IDs[2]);
+	console.log(recipe);
+	const related = await getRelated('Aikansh');
+	console.log(related);
+
+	return recipe;
+}
+getRecipesAW().then(result => { // recipie, returned from line 121 will be received here
+	console.log(`${result} is the best ever!`);
 });
