@@ -124,4 +124,18 @@ for(let [key, value] of  map.entries()) {} // 'for-of' loop syntax
  }
 
 
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+// PROMISES
+- Object that keeps track about whether a certain event has happened already or not;
+
+- Determines what happens after event has happened;
+
+- resolve/reject are two fns which are called depending on whether promise is fulfilled or not;
+
+- then/catch are two methods used on promise objects, to consume our promise
+
+
+
 *****************************************************************************************************************************************************************************************************/
