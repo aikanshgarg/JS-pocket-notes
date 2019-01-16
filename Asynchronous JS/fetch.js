@@ -18,9 +18,30 @@ function getWeather(woeid) {
 	.then(data => { // data argument stores data returned by line 14
 		//console.log(data);
 		const today = data.consolidated_weather[1];
-		console.log(`Temperatures in ${data.title} stay between ${today.min_temp} and ${today.max_temp}`);
+		console.log(`Temperatures today in ${data.title} stay between ${today.min_temp} and ${today.max_temp}`);
 	})
 	.catch(error => console.log('Something gone wrong!!'));
 }
 getWeather(28743736);
 getWeather(44418);
+
+
+async function getWeatherAW(woeid) {
+	try {
+		const result = await fetch(`https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${woeid}/`);
+		const data = await result.json();
+		const tomorrow = data.consolidated_weather[2];
+		console.log(`Temperatures tomorrow in ${data.title} stay between ${tomorrow.min_temp} and ${tomorrow.max_temp}`);
+		return data; // whatever is returned from async fn is result of promise produced
+	} catch(error) {
+		console.log(error);
+	}
+}
+
+getWeatherAW(28743736);
+
+let dataLondon;
+getWeatherAW(44418).then(data => {
+	dataLondon = data;
+	console.log(dataLondon);
+});
