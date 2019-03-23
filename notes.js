@@ -160,3 +160,65 @@
 - EVENT BUBBLING reason: each item is added AFTER the page is loaded, but, event listeners are set during the loading of the page. So we need to attach the event listener to the parent element, 							 which is loaded right away.
 
 - querySelectorAll: Node list is returned by this method. So, we can't use forEach method of arrays. HACK: convert it into array using slice method 
+
+
+
+
+
+
+
+
+
+
+**************************************  FORKIFY API **********************************************************************************************************************************
+- dist(distant) and src(source) are two directories in our app's code. 
+	dist: all the code which is sent to the client side
+	src: our development code, it's bundled together (and sent to dist folder) by webpack, into one file called bundle.js 
+
+- NodeJS packages are of 2 types: 
+	1. Libraries & Frameworks
+	2. Web Dev Tools 
+
+- Locally install packages (for a particular project)
+npm install webpack --save-dev {Saves webpack as a developer dependency}
+npm install jquery --save {Installs jquery but not as a dev dependency}
+
+- Globally install packages (for the entire system)
+npm install live-server --global {Allows to serve static files over local setup server on port: https://www.npmjs.com/package/live-server} 
+
+
+- *package.json* file's use:
+	1. We need not share entire node_modules folder to know about all the dependencies of the project, when working in a team or on other computer
+	2. We can remove node_modules folder and simply use command: npm install, this will fetch all our dependencies and make a node_modules folder
+
+
+- WEBPACK ----------------------------
+1. entry point
+2. output
+3. loaders: helps in converting and loading files, eg: SASS to CSS, ES6 to ES5
+4. plugin
+
+- webpack-dev-server: auto load the changes when file is saved
+- webpack.config.js: configuration file for webpack
+- .babelrc: configuration file for babel
+
+- POLYFILL: to convert the features of latest versions which were not there in earlier ones, like promises and .toArray()
+	* these are the features which couldn't be converted by the Babel loaders
+	* this is a real dependency, not a dev dependency, as it atually goes into our final client side code 
+
+- 'axios' : http request protocol, better than fetch because
+	1) error handling is better
+	2) supported in all browsers
+	3) get and post are simultaneous
+
+- SOME NICE NEW THINGS LEARNT
+	* webpack-dev-server
+	* insertAdjacentHTML
+	* axios
+	* shortening the name of recipes by reduce & join methods (lecture no. 143, search view part-2)
+	* removing/deleting elements from the DOM
+	* JS's closest() method and HTML5 data-* attribute: lecture 145 (pagination)
+	* event-delegation/bubbling
+	* how to read data from page URL
+	* respond to hashchange event
+	* add multiple events to same event listener 
