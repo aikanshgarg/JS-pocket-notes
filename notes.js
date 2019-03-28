@@ -213,12 +213,18 @@ npm install live-server --global {Allows to serve static files over local setup 
 
 - SOME NICE NEW THINGS LEARNT
 	* webpack-dev-server
-	* insertAdjacentHTML
-	* axios
-	* shortening the name of recipes by reduce & join methods (lecture no. 143, search view part-2)
-	* removing/deleting elements from the DOM
-	* JS's closest() method and HTML5 data-* attribute: lecture 145 (pagination)
+	* insertAdjacentHTML: to add HTML-markup(string literals used) to the DOM
+	* axios: fetch like http protocol
+	* shortening the name of recipes by reduce & join methods (lecture-143, search view part-2)
+	* removing/deleting elements from the DOM (moving up the parent and using remove child)
+	* JS's closest() method and HTML5 data-* attribute: lecture 145 (pagination + shopping list items)
 	* event-delegation/bubbling
 	* how to read data from page URL
 	* respond to hashchange event
-	* add multiple events to same event listener 
+	* add multiple events to same event listener
+	* parseIngredient() method in Recipe.js model (lecture-148) 
+	* fracty: https://www.npmjs.com/package/fracty (lecture-150)
+	* target.matches method (lecture-151)
+	* uniqid: https://github.com/adamhalasz/uniqid (to delete and update items) 
+	* setAttribute: likes icon toggling on UI (likesView.js)
+	* localStorage API

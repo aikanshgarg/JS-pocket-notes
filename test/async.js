@@ -12,7 +12,7 @@ const second = () => {
 first();
 second();*/
 
-/*
+
 function getPlayer() {
 
 	setTimeout(() => {
@@ -41,38 +41,38 @@ function getPlayer() {
 	}, 2000);
 }
 getPlayer();
-*/
 
-const getIDs = new Promise((resolve, reject) => {
-	setTimeout(() => {
-		resolve([18, 7, 15, 45, 10]);
-	}, 1500);
-});
 
-const getPlayer = playerID => {
-	return new Promise((resolve, reject) => {
-		setTimeout((ID) => {
-			const player = {
-				name: 'Sachin Tendular',
-				state: 'Mumbai',
-				aka: 'Master Blaster'
-			};
-			resolve(`${player.name}(${ID}), also known as ${player.aka}, hails from ${player.state}.`);
-		}, 1500, playerID);
-	});
-};
+// const getIDs = new Promise((resolve, reject) => {
+// 	setTimeout(() => {
+// 		resolve([18, 7, 15, 45, 10]);
+// 	}, 1500);
+// });
 
-const getStatePlayer = state => {
-	return new Promise((resolve, reject) => {
-		setTimeout((sameState) => {
-			const player2 = {
-				name: 'Rohit Sharma',
-				aka: 'Hitman'
-			};
-			resolve(`${player2.name} also hails from ${sameState}.`);
-		}, 1000, state);
-	});
-};
+// const getPlayer = playerID => {
+// 	return new Promise((resolve, reject) => {
+// 		setTimeout((ID) => {
+// 			const player = {
+// 				name: 'Sachin Tendular',
+// 				state: 'Mumbai',
+// 				aka: 'Master Blaster'
+// 			};
+// 			resolve(`${player.name}(${ID}), also known as ${player.aka}, hails from ${player.state}.`);
+// 		}, 1500, playerID);
+// 	});
+// };
+
+// const getStatePlayer = state => {
+// 	return new Promise((resolve, reject) => {
+// 		setTimeout((sameState) => {
+// 			const player2 = {
+// 				name: 'Rohit Sharma',
+// 				aka: 'Hitman'
+// 			};
+// 			resolve(`${player2.name} also hails from ${sameState}.`);
+// 		}, 1000, state);
+// 	});
+// };
 
 
 /*getIDs
@@ -88,22 +88,22 @@ const getStatePlayer = state => {
 		console.log(player2);
 	});*/
 
-async function getPlayerAW() {
-	const IDs = await getIDs;
-	console.log(IDs);
-	const player = await getPlayer(IDs[4]);
-	console.log(player);
-	const related = await getStatePlayer('Mumbai');
-	console.log(related);
+// async function getPlayerAW() {
+// 	const IDs = await getIDs;
+// 	console.log(IDs);
+// 	const player = await getPlayer(IDs[4]);
+// 	console.log(player);
+// 	const related = await getStatePlayer('Mumbai');
+// 	console.log(related);
 
-	const city = 'Mumbai'
+// 	const city = 'Mumbai'
 
-	return city;
-}
+// 	return city;
+// }
 
-//const pending = getPlayerAW();
-//console.log(pending);
-getPlayerAW()
-	.then(related => {
-		console.log(`${related} Indians have many great batsmen in their IPL team as well!`);
-	});
+// //const pending = getPlayerAW();
+// //console.log(pending);
+// getPlayerAW()
+// 	.then(related => {
+// 		console.log(`${related} Indians have many great batsmen in their IPL team as well!`);
+// 	});
