@@ -1,4 +1,4 @@
-/*****************************************************
+/*********************************************************************************************************************************
 
 - In its most basic form, a function expression produces a value, while a function statement performs an action.
 
@@ -31,7 +31,7 @@
 
 
 
-********** FUNCTION CONSTRUCTORS vs OBJECT.CREATE ************
+**************************************** FUNCTION CONSTRUCTORS vs OBJECT.CREATE ***********************************
 
 - function constructor
 
@@ -63,6 +63,7 @@
 
 
 ****************************** FIRST CLASS FUNCTIONS *******************************************************************
+
 - return functions from functions
 
 	function isOlympicPlayer(sport) {
@@ -85,29 +86,27 @@
 
 
 
-****************************** IIFE ***********************************************************************************
+****************************** IIFE *******************************************************************************************
+
 - used for data privacy
 - hide scope of a function variables and methods from outer world
 - simply enclose the function in () and call it there itself. // layout- (function() {}) ();
 
 
-
-****************************** BIND/CALL/APPLY ************************************************************************
+****************************** BIND/CALL/APPLY *********************************************************************************
 
 - call method allows us to set 'this' as the first argument, used for method borrowing
 - apply allows to pass arguments in an array, rest acts same as call
 - bind allows us to create a copy of the fn with a preset argument
 
 
-
-****************************** EVENT BUBBLING, TARGET ELEMENT & EVENT DELEGATION **************************************
+****************************** EVENT BUBBLING, TARGET ELEMENT & EVENT DELEGATION ***********************************************
 
 - event goes up the order, i.e, all the way up from its parents to root of HTML: bubbling
 - event may be targeted at a child element but can be fired at any of it's parent element: delegation
 
 
-
-**************************************  BUDGET APP **********************************************************************************************************************************
+**************************************************  BUDGET APP ********************************************************************
 
 - Modules: function expressions, purpose: private and public data, data encapsulation
 - API is an example of hiding data from outside and letting use some fns 
@@ -162,15 +161,8 @@
 - querySelectorAll: Node list is returned by this method. So, we can't use forEach method of arrays. HACK: convert it into array using slice method 
 
 
+**************************************  FORKIFY API ********************************************************************************
 
-
-
-
-
-
-
-
-**************************************  FORKIFY API **********************************************************************************************************************************
 - dist(distant) and src(source) are two directories in our app's code. 
 	dist: all the code which is sent to the client side
 	src: our development code, it's bundled together (and sent to dist folder) by webpack, into one file called bundle.js 
@@ -192,7 +184,7 @@ npm install live-server --global {Allows to serve static files over local setup 
 	2. We can remove node_modules folder and simply use command: npm install, this will fetch all our dependencies and make a node_modules folder
 
 
-- WEBPACK ----------------------------
+************************************** WEBPACK **************************************
 1. entry point
 2. output
 3. loaders: helps in converting and loading files, eg: SASS to CSS, ES6 to ES5
