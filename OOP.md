@@ -50,6 +50,7 @@ First-class citizens means classes can be passed through other fns
 
 #### Getters & Setters
 
+They are used so that we can simply access the fns as ppty values instead of explicitly calling them.
 ![Alt text](image-25.png)
 
 #### Static Methods
@@ -73,6 +74,8 @@ Using ES6 Classes(syntactical sugar; under the hood works same as constr. fn)
 
 ![Alt text](image-29.png)
 ![Alt text](image-30.png)
+
+- _Static methods are available only to Class and not its Instances_ (here, only Account class can use the static method, its instances like acc1, acc2 can't access it. This is similar to Array.from() method)
 
 ### CLASSES SUMMARY
 
