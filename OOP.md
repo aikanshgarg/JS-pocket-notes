@@ -12,7 +12,7 @@ OOP's main purpose: organizing code to make it clean and maintainable
 3. INHERITANCE: child-parent class relationship to reuse common logic
 4. POLYMORPHISM: a child can overwrite the method it inherited from parent
 
-### OOP is JavaScript!
+### OOP in JavaScript!
 
 ![Alt text](image-16.png)
 ![Alt text](image-17.png)
@@ -71,86 +71,9 @@ Using ES6 Classes(syntactical sugar; under the hood works same as constr. fn)
 
 #### Encapsulation: Private Class Fields and Methods
 
-      // 1) Public fields
-      // 2) Private fields
-      // 3) Public methods
-      // 4) Private methods
-      // (there is also the static version)
+![Alt text](image-29.png)
+![Alt text](image-30.png)
 
-      class Account {
-        // 1) Public fields (instances)
-        locale = navigator.language;
+### CLASSES SUMMARY
 
-        // 2) Private fields (instances)
-        #movements = [];
-        #pin;
-
-        constructor(owner, currency, pin) {
-          this.owner = owner;
-          this.currency = currency;
-          this.#pin = pin;
-
-          // Protected property
-          // this._movements = [];
-          // this.locale = navigator.language;
-
-          console.log(`Thanks for opening an account, ${owner}`);
-        }
-
-        // 3) Public methods
-
-        // Public interface
-        getMovements() {
-          return this.#movements;
-        }
-
-        deposit(val) {
-          this.#movements.push(val);
-          return this;
-        }
-
-        withdraw(val) {
-          this.deposit(-val);
-          return this;
-        }
-
-        requestLoan(val) {
-          // if (this.#approveLoan(val)) {
-          if (this._approveLoan(val)) {
-            this.deposit(val);
-            console.log(`Loan approved`);
-            return this;
-          }
-        }
-
-        static helper() {
-          console.log('Helper');
-        }
-
-        // 4) Private methods
-        // #approveLoan(val) {
-        _approveLoan(val) {
-          return true;
-        }
-      }
-
-      const acc1 = new Account('Jonas', 'EUR', 1111);
-
-      // acc1._movements.push(250);
-      // acc1._movements.push(-140);
-      // acc1.approveLoan(1000);
-
-      acc1.deposit(250);
-      acc1.withdraw(140);
-      acc1.requestLoan(1000);
-      console.log(acc1.getMovements());
-      console.log(acc1);
-      Account.helper();
-
-      console.log(acc1.#movements);
-      console.log(acc1.#pin);
-      console.log(acc1.#approveLoan(100));
-
-      // Chaining
-      acc1.deposit(300).deposit(500).withdraw(35).requestLoan(25000).withdraw(4000);
-      console.log(acc1.getMovements());
+![Alt text](image-31.png)
