@@ -1,7 +1,14 @@
 ### Concurrency model
 
 - JavaScript runs in _one single thread_, so it can only do one thing at a time.
-  We handle concurrent tasks by using an event loop: takes long running tasks, executes them in the “background”, and puts them back in the main thread once they are finished
+  We handle concurrent tasks by using an event loop: takes long running tasks, executes them in the “background”(web API), and puts them back in the main thread once they are finished.
+
+  Event loop is the one which decides when each callback will be taken out of callback queue & executed in the call stack.
+  ![Alt text](image-32.png)
+
+  Event Loop In Practice
+  (here setTimeout should be called first as it was put in queue first, but microtask queue of promises callback has priority over normal callback queue)
+  ![Alt text](image-33.png)
 
 ### Is JS an interpreted language?
 
